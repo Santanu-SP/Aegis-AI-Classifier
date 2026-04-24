@@ -8,6 +8,12 @@ import sys
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import nltk
+
+# Ensure NLTK resources are available in deployment
+nltk.download('stopwords', quiet=True)
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src'))
 from predict import predict
